@@ -1,0 +1,64 @@
+
+[
+    
+    {
+      "id": "1",
+      "name": "Elephant",
+      "number_of_legs": 4,
+      "natural_habitat": "Savannah, Forests"
+    },
+    {
+      "id": "2",
+      "name": "Penguin",
+      "number_of_legs": 2,
+      "natural_habitat": "Antarctica, Coastal Regions"
+    },
+    {
+      "id": "3",
+      "name": "Kangaroo",
+      "number_of_legs": 2,
+      "natural_habitat": "Grasslands, Forests"
+    },
+    {
+      "id": "4",
+      "name": "Frog",
+      "number_of_legs": 4,
+      "natural_habitat": "Swamps, Ponds, Forests"
+    },
+    {
+      "id": "5",
+      "name": "Spider",
+      "number_of_legs": 8,
+      "natural_habitat": "Various (Forests, Deserts, Urban Areas)"
+    },
+    {
+      "id": "6",
+      "name": "Dolphin",
+      "number_of_legs": 0,
+      "natural_habitat": "Oceans, Seas"
+    },
+    {
+      "id": "7",
+      "name": "Eagle",
+      "number_of_legs": 2,
+      "natural_habitat": "Mountains, Forests"
+    },
+    {
+      "id": "8",
+      "name": "Tiger",
+      "number_of_legs": 4,
+      "natural_habitat": "Forests, Grasslands"
+    },
+    {
+      "id": "9",
+      "name": "Octopus",
+      "number_of_legs": 8,
+      "natural_habitat": "Oceans, Coral Reefs"
+    },
+    {
+      "id": "10",
+      "name": "Horse",
+      "number_of_legs": 4,
+      "natural_habitat": "Grasslands, Meadows"
+    }
+  ]
