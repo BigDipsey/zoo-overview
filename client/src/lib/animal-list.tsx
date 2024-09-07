@@ -31,10 +31,10 @@ export function AnimalList() {
       <TableCaption>Animals in the ZOO</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">Id</TableHead>
+          <TableHead className="w-[5px]">Id</TableHead>
           <TableHead>Name</TableHead>
           <TableHead>Leg Count</TableHead>
-          <TableHead className="text-right">Natural Occurrences</TableHead>
+          <TableHead className="center">Natural Occurrences</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -43,8 +43,8 @@ export function AnimalList() {
             <TableCell className="font-medium">{animal.id}</TableCell>
             <TableCell>{animal.name}</TableCell>
             <TableCell>{animal.numberOfLegs}</TableCell>
-            <TableCell className="text-right">
-              {animal.naturalHabitat}
+            <TableCell className="center">{animal.naturalHabitat}</TableCell>
+            <TableCell className="text-end">
               <EditAnimal animal={animal} />
               <DeleteAnimal animal={animal} />
             </TableCell>

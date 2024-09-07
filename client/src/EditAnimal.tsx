@@ -66,7 +66,6 @@ export function EditAnimal({ animal }: Props) {
               d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"
             />
           </svg>
-          Edit
         </Button>
       </SheetTrigger>
       <SheetContent>
@@ -83,6 +82,7 @@ export function EditAnimal({ animal }: Props) {
             </Label>
             <Input
               id="name"
+              type="text"
               value={animalName}
               placeholder={animalName}
               className="col-span-3"
@@ -95,9 +95,10 @@ export function EditAnimal({ animal }: Props) {
             </Label>
             <Input
               id="numberOfLegs"
+              type="number"
               value={animalNumberOfLegs}
               placeholder={`${animalNumberOfLegs}`}
-              className="col-span-3"
+              className="col-span-3 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               onChange={(e) => setAnimalNumberOfLegs(parseInt(e.target.value))}
             />
           </div>
@@ -107,6 +108,7 @@ export function EditAnimal({ animal }: Props) {
             </Label>
             <Input
               id="naturalHabitat"
+              type="text"
               value={animalNaturalHabitat}
               placeholder={animalNaturalHabitat}
               className="col-span-3"

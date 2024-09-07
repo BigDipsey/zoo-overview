@@ -3,8 +3,6 @@ import { db } from "../prisma";
 import { cors } from '@elysiajs/cors'
 
 
-
-
 type Animal = {
   id: string;
   name: string;
@@ -20,6 +18,8 @@ const app = new Elysia()
 app.get("/", () => {
   return "ZOO API"
 })
+
+
 
 
 app.get('/allAnimals', async () => {
@@ -39,15 +39,11 @@ app.get('/animal/:id', async ({ params }) => {
   }, 
   )
 
-
-
-
 app.post('/newAnimal', async ({ body }) => {
 
 await db.animal.create({
   data: body
 })
-
 }, {
   body: t.Object({
     name: t.String(),
@@ -98,3 +94,26 @@ app.listen(3000);
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
 );
+
+
+
+// import { promises as fs } from 'fs';  // Ensure you're using the promises version of fs
+
+// app.post('/addAllAnimals', async () => {
+//   // Read the JSON file
+//   const data: string = await fs.readFile('src/animals.json', 'utf-8');
+
+//   // Parse the JSON content into an array of animals
+//   const animals: { name: string; number_of_legs: number; natural_habitat: string }[] = JSON.parse(data);
+
+//   // Insert all animals into the database
+//   await db.animal.createMany({
+//     data: animals.map((animal) => ({
+//       name: animal.name,
+//       numberOfLegs: animal.number_of_legs,
+//       naturalHabitat: animal.natural_habitat,
+//     })),
+//   });
+
+//   return { message: 'All animals added successfully!' };
+// });
