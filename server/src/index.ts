@@ -3,15 +3,6 @@ import { db } from "../prisma";
 import { cors } from '@elysiajs/cors'
 
 
-type Animal = {
-  id: string;
-  name: string;
-  numberOfLegs: number;
-  naturalHabitat: string;
-}
-
-const PATH = 'src/animals.json'
-
 const app = new Elysia()
 .use(cors())
 

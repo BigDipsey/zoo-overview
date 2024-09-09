@@ -1,3 +1,4 @@
+import { AddAnimal } from '@/AddAnimal'
 import { Animal } from '@/App'
 import {
   Table,
@@ -27,30 +28,33 @@ export function AnimalList() {
   }, [])
 
   return (
-    <Table>
-      <TableCaption>Animals in the ZOO</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[5px]">Id</TableHead>
-          <TableHead>Name</TableHead>
-          <TableHead>Leg Count</TableHead>
-          <TableHead className="center">Natural Occurrences</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {animals.map((animal) => (
-          <TableRow key={animal.id}>
-            <TableCell className="font-medium">{animal.id}</TableCell>
-            <TableCell>{animal.name}</TableCell>
-            <TableCell>{animal.numberOfLegs}</TableCell>
-            <TableCell className="center">{animal.naturalHabitat}</TableCell>
-            <TableCell className="text-end">
-              <EditAnimal animal={animal} />
-              <DeleteAnimal animal={animal} />
-            </TableCell>
+    <>
+      <AddAnimal />
+      <Table>
+        <TableCaption>Animals in the ZOO</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[5px]">Id</TableHead>
+            <TableHead>Name</TableHead>
+            <TableHead>Leg Count</TableHead>
+            <TableHead className="center">Natural Occurrences</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {animals.map((animal) => (
+            <TableRow key={animal.id}>
+              <TableCell className="font-medium">{animal.id}</TableCell>
+              <TableCell>{animal.name}</TableCell>
+              <TableCell>{animal.numberOfLegs}</TableCell>
+              <TableCell className="center">{animal.naturalHabitat}</TableCell>
+              <TableCell className="text-end">
+                <EditAnimal animal={animal} />
+                <DeleteAnimal animal={animal} />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </>
   )
 }

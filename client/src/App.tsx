@@ -1,4 +1,3 @@
-import { AddAnimal } from './AddAnimal'
 import { AnimalList } from './lib/animal-list'
 
 export type Animal = {
@@ -11,7 +10,6 @@ export type Animal = {
 function App() {
   return (
     <>
-      <AddAnimal />
       <AnimalList />
     </>
   )
