@@ -20,7 +20,7 @@ export function AddAnimal() {
 
   const handleChange = () => {
     if (animalName === '') return setIsErrorMessageVisible(true)
-    fetch(`http://localhost:3000/newAnimal/`, {
+    fetch(`http://localhost:5000/animal`, {
       headers: {
         'Content-Type': 'application/json',
       },

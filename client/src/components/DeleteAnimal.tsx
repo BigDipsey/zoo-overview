@@ -10,7 +10,7 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
-import { Animal } from './App'
+import { Animal } from '../lib/types'
 
 type Props = {
   animal: Animal
@@ -18,7 +18,7 @@ type Props = {
 
 export function DeleteAnimal({ animal }: Props) {
   const handleDelete = () => {
-    fetch(`http://localhost:3000/removeAnimal/${animal.id}`, {
+    fetch(`http://localhost:5000/animal/${animal.id}`, {
       headers: {
         'Content-Type': 'application/json',
       },

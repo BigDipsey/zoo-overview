@@ -13,7 +13,7 @@ app.get("/", () => {
 
 
 
-app.get('/allAnimals', async () => {
+app.get('/animals', async () => {
 
   return(
   await db.animal.findMany()
@@ -30,7 +30,7 @@ app.get('/animal/:id', async ({ params }) => {
   }, 
   )
 
-app.post('/newAnimal', async ({ body }) => {
+app.post('/animal', async ({ body }) => {
 
 await db.animal.create({
   data: body
@@ -46,7 +46,7 @@ await db.animal.create({
 
 
 
-app.put('/updateAnimal/:id', async ({ params, body }) =>{
+app.put('/animal/:id', async ({ params, body }) =>{
   
   await db.animal.update({
     where: { id: parseInt(params.id, 10) }, 
@@ -63,7 +63,7 @@ app.put('/updateAnimal/:id', async ({ params, body }) =>{
   }
   )
 
-  app.delete('/removeAnimal/:id', async ({ params, body }) =>{
+  app.delete('/animal/:id', async ({ params, body }) =>{
   
     await db.animal.delete({
       where: { id: parseInt(params.id, 10) },
@@ -79,32 +79,9 @@ app.put('/updateAnimal/:id', async ({ params, body }) =>{
     }
     )
 
-app.listen(3000);
+app.listen(5000);
 
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
 );
-
-
-
-// import { promises as fs } from 'fs';  // Ensure you're using the promises version of fs
-
-// app.post('/addAllAnimals', async () => {
-//   // Read the JSON file
-//   const data: string = await fs.readFile('src/animals.json', 'utf-8');
-
-//   // Parse the JSON content into an array of animals
-//   const animals: { name: string; number_of_legs: number; natural_habitat: string }[] = JSON.parse(data);
-
-//   // Insert all animals into the database
-//   await db.animal.createMany({
-//     data: animals.map((animal) => ({
-//       name: animal.name,
-//       numberOfLegs: animal.number_of_legs,
-//       naturalHabitat: animal.natural_habitat,
-//     })),
-//   });
-
-//   return { message: 'All animals added successfully!' };
-// });

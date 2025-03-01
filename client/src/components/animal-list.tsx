@@ -1,5 +1,5 @@
-import { AddAnimal } from '@/AddAnimal'
-import { Animal } from '@/App'
+import { AddAnimal } from '@/components/AddAnimal'
+import { Animal } from '../lib/types'
 import {
   Table,
   TableCaption,
@@ -9,15 +9,15 @@ import {
   TableBody,
   TableCell,
 } from '@/components/ui/table'
-import { DeleteAnimal } from '@/DeleteAnimal'
-import { EditAnimal } from '@/EditAnimal'
+import { DeleteAnimal } from '@/components/DeleteAnimal'
+import { EditAnimal } from '@/components/EditAnimal'
 import { useState, useEffect } from 'react'
 
 export function AnimalList() {
   const [animals, setAnimals] = useState<Animal[]>([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/allAnimals', {
+    fetch('http://localhost:5000/animals', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -25,6 +25,7 @@ export function AnimalList() {
     })
       .then((response) => response.json())
       .then((data) => setAnimals(data))
+      .then((data) => console.log(data))
   }, [])
 
   return (

@@ -1,0 +1,22 @@
+# Use Bun as the base image
+FROM oven/bun:latest
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files and install dependencies
+COPY bun.lockb package.json prisma/schema.prisma ./
+RUN bun install
+
+# Copy the rest of the app
+COPY . . 
+
+# Copy Prisma env
+COPY .env .env
+
+# Expose the backend port
+EXPOSE 5000
+
+# Run Prisma migrations, generate client, and start the backend
+CMD ["sh", "-c", "bunx prisma db push && bun prisma migrate deploy && bun prisma generate && bun run start"]
+

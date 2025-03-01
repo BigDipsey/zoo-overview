@@ -1,11 +1,4 @@
-import { AnimalList } from './lib/animal-list'
-
-export type Animal = {
-  id: number
-  name: string
-  numberOfLegs: number
-  naturalHabitat: string
-}
+import { AnimalList } from './components/animal-list'
 
 function App() {
   return (

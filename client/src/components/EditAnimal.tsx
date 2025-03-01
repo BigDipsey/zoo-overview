@@ -13,7 +13,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 
-import { Animal } from './App'
+import { Animal } from '../lib/types'
 
 type Props = {
   animal: Animal
@@ -29,7 +29,7 @@ export function EditAnimal({ animal }: Props) {
   )
 
   const handleChange = () => {
-    fetch(`http://localhost:3000/updateAnimal/${animal.id}`, {
+    fetch(`http://localhost:5000/animal/${animal.id}`, {
       headers: {
         'Content-Type': 'application/json',
       },
