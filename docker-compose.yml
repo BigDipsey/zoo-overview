@@ -2,14 +2,14 @@ services:
   frontend:
     build: ./client
     ports:
-      - "3001:80"
+      - '3001:80'
     depends_on:
-      - "backend"
+      - 'backend'
 
   backend:
     build: ./server
     ports:
-      - "5000:5000"
+      - '9000:9000'
     environment:
       - DATABASE_URL=postgresql://postgres:admin@db:5432/zoo?schema=public
     depends_on:
@@ -24,9 +24,9 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: zoo
     ports:
-      - "5432:5432"
+      - '5432:5432'
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "postgres"]
+      test: ['CMD', 'pg_isready', '-U', 'postgres']
       interval: 10s
       retries: 5
       start_period: 30s

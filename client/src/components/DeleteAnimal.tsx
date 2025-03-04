@@ -18,7 +18,7 @@ type Props = {
 
 export function DeleteAnimal({ animal }: Props) {
   const handleDelete = () => {
-    fetch(`http://localhost:5000/animal/${animal.id}`, {
+    fetch(`http://localhost:9000/animal/${animal.id}`, {
       headers: {
         'Content-Type': 'application/json',
       },

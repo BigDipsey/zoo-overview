@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { useState } from 'react'
 import {
   Sheet,
   SheetClose,
@@ -12,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { useState } from 'react'
 
 import { Animal } from '../lib/types'
 
@@ -29,7 +29,7 @@ export function EditAnimal({ animal }: Props) {
   )
 
   const handleChange = () => {
-    fetch(`http://localhost:5000/animal/${animal.id}`, {
+    fetch(`http://localhost:9000/animal/${animal.id}`, {
       headers: {
         'Content-Type': 'application/json',
       },
