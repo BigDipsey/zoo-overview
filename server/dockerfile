@@ -15,7 +15,7 @@ COPY . .
 COPY .env .env
 
 # Expose the backend port
-EXPOSE 5000
+EXPOSE 9000
 
 # Run Prisma migrations, generate client, and start the backend
 CMD ["sh", "-c", "bunx prisma db push && bun prisma migrate deploy && bun prisma generate && bun run start"]
